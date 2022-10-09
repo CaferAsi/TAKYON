@@ -41,7 +41,6 @@ const changeWord=async () =>{
     await window.contract.methods.changeFlower(inputValue).send({ from: msg });
     readContract();
 }
-
     //server
 const exprss=require("express");
 const app =exprss();
