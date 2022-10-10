@@ -90,18 +90,18 @@ const readContract = async () => {
     document.getElementById("dataArea").innerHTML = data;}
     catch  {document.getElementById("dataArea").innerHTML = "error! \n try to connect the smart contract \n or check the wallet connection ";}
 }
+//change data
 const changeWord=async () =>{
     var inputValue  =document.getElementById("1").value;
     await window.contract.methods.changeFlower(inputValue).send({ from: msg });
     readContract();
 }
 
-
+// wallet transactions
 const getContractAccount = async () => {
     const data = await window.contract.methods.getAddress().call();
     document.getElementById("contractAccount").innerHTML = `Contract Account: ${data}`;
 }
-
 const getBalanceApple = async () => {
     const data = await window.contract.methods.getBalance().call();
     document.getElementById("balanceArea").innerHTML = `Contract Balance: ${data}`;
